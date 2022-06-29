@@ -1,46 +1,22 @@
 [
     {
-        "id": "26c974472fc4e9e3",
-        "type": "mqtt out",
+        "id": "a0c8e1e9a2fe27e3",
+        "type": "function",
         "z": "22805b59579aa185",
         "name": "",
-        "topic": "codigoIoT/g9/mosquitto/flow5",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "731edda2a0cfbbea",
-        "x": 680,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "731edda2a0cfbbea",
-        "type": "mqtt-broker",
-        "name": "g9",
-        "broker": "35.157.99.2",
-        "port": "1883",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "sessionExpiry": ""
+        "func": "msg.payload = '{\"id\":\"Chirino Iztapalapa, CDMX\",\"temp\":'+global.get (\"tempFlow5\")+',\"hum\":'+global.get (\"humFlow5\")+',\"uv\":'+global.get(\"uvFlow5\")+',\"aqi\":'+global.get(\"aqiFlow5\")+'}';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 600,
+        "wires": [
+            [
+                "26c974472fc4e9e3",
+                "3a9a4b161a2ffc2c"
+            ]
+        ]
     }
 ]
